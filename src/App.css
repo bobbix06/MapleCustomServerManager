@@ -198,22 +198,13 @@ body {
   transition: all 0.3s;
 }
 
-.restart-btn {
+.kick-btn {
   background: #FF9800;
   color: white;
 }
 
-.restart-btn:hover {
+.kick-btn:hover {
   background: #F57C00;
-}
-
-.shutdown-btn {
-  background: #f44336;
-  color: white;
-}
-
-.shutdown-btn:hover {
-  background: #da190b;
 }
 
 .no-players {

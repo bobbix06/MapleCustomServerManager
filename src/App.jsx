@@ -48,17 +48,12 @@ export default function App() {
   }
 
   // Server control functions
-  function restartServer() {
-    if (confirm("Are you sure you want to restart the server? All players will be disconnected.")) {
-      alert("Server restart initiated...");
-      // In real app, make API call to restart server
-    }
-  }
-
-  function shutdownServer() {
-    if (confirm("Are you sure you want to shutdown the server? This cannot be undone remotely.")) {
-      alert("Server shutdown initiated...");
-      // In real app, make API call to shutdown server
+  function kickAllPlayers() {
+    if (confirm("Are you sure you want to kick all players from the server?")) {
+      alert("Kicking all players...");
+      setPlayers([]); // Clear the players list
+      setServerStats(prev => ({ ...prev, playerCount: 0 }));
+      // In real app, make API call to kick all players
     }
   }
 
@@ -118,8 +113,7 @@ export default function App() {
         <div className="server-controls">
           <h3>Server Controls</h3>
           <div className="control-buttons">
-            <button onClick={restartServer} className="control-btn restart-btn">Restart Server</button>
-            <button onClick={shutdownServer} className="control-btn shutdown-btn">Shutdown Server</button>
+            <button onClick={kickAllPlayers} className="control-btn kick-btn">Kick All Players</button>
           </div>
         </div>
 
